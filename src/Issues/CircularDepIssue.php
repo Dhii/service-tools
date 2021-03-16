@@ -22,7 +22,8 @@ class CircularDepIssue extends ServiceIssue
             throw new UnexpectedValueException('Dependency chain cannot be empty');
         }
 
-        $service = reset($depChain);
+        $depChain = array_values($depChain);
+        $service = $depChain[0];
         $message = 'Circular dependency: ' . implode(' -> ', $depChain) . ' -> ' . $service;
 
         parent::__construct(static::ERROR, $message, $service);
