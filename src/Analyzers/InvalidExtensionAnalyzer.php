@@ -16,7 +16,11 @@ class InvalidExtensionAnalyzer implements AnalyzerInterface
     {
         foreach ($extensions as $key => $extension) {
             if (!array_key_exists($key, $factories)) {
-                yield new ServiceIssue(Issue::WARNING, 'Extension extends unknown service', $key);
+                yield new ServiceIssue(
+                    Issue::WARNING,
+                    "Extension \"$key\" does not correspond to a known service",
+                    $key
+                );
             }
         }
     }

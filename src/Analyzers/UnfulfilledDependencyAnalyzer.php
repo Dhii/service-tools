@@ -28,7 +28,12 @@ class UnfulfilledDependencyAnalyzer implements AnalyzerInterface
 
             foreach ($deps as $dep) {
                 if (!array_key_exists($dep, $factories)) {
-                    yield new DependencyIssue(Issue::WARNING, 'Unfulfilled dependency', $key, $dep);
+                    yield new DependencyIssue(
+                        Issue::WARNING,
+                        "Service \"$key\" has an unfulfilled dependency: \"$dep\"",
+                        $key,
+                        $dep
+                    );
                 }
             }
         }
