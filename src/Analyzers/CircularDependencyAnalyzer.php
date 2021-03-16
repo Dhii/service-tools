@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Dhii\Services\Tools\Analyzers;
 
+use Dhii\Services\ServiceInterface;
 use Dhii\Services\Tools\AnalyzerInterface;
 use Dhii\Services\Tools\Issue;
 use Dhii\Services\Tools\Issues\CircularDepIssue;
@@ -29,13 +30,16 @@ class CircularDependencyAnalyzer implements AnalyzerInterface
      * Walks a list of services, recursively walking their dependencies while keeping track of what services have
      * already been visited. If a service is visited twice, an {@link Issue} is yielded.
      *
-     * @param array $factories The entire list of factories. Used to resolve service/dependency keys.
-     * @param array $toWalk    The list of services to walk.
-     * @param array $visited   A dictionary of keys for the services that have been "walked". This acts as a buffer
-     *                         stack and is used to detect when the walk re-visits an already visited service.
-     * @param array $skip      A dictionary of keys for services that should be skipped. Services that were detected as
-     *                         being a part of a circular dependency are added to this list to prevent reporting the
-     *                         same circular chain multiple times.
+     * @param array<callable|ServiceInterface> $factories The entire list of factories. Used to resolve
+     *                                                    service/dependency keys.
+     * @param array<callable|ServiceInterface> $toWalk    The list of services to walk.
+     * @param string[]                         $visited   A dictionary of keys for the services that have been
+     *                                                    "walked". This acts as a buffer stack and is used to detect
+     *                                                    when the walk re-visits an already visited service.
+     * @param string[]                         $skip      A dictionary of keys for services that should be skipped.
+     *                                                    Services that were detected as being a part of a circular
+     *                                                    dependency are added to this list to prevent reporting the
+     *                                                    same circular chain multiple times.
      *
      * @return iterable<Issue>
      */

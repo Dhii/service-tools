@@ -6,6 +6,9 @@ namespace Dhii\Services\Tools\Issues;
 
 use UnexpectedValueException;
 
+/**
+ * An circular dependency issue.
+ */
 class CircularDepIssue extends ServiceIssue
 {
     /** @var string[] */
@@ -14,7 +17,7 @@ class CircularDepIssue extends ServiceIssue
     /**
      * Constructor.
      *
-     * @param string[] $depChain
+     * @param string[] $depChain The list of dependency keys in order of requirement (dependents first).
      *
      * @throws UnexpectedValueException If the given dependency chain is empty.
      */

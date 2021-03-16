@@ -4,13 +4,19 @@ declare(strict_types=1);
 
 namespace Dhii\Services\Tools\Utils;
 
+use Dhii\Services\ServiceInterface;
+
 trait ResolveServicesCapableTrait
 {
     /**
-     * @param array $services
-     * @param array $keys
+     * Resolves a list of keys into services.
      *
-     * @return string[]
+     * Keys that do not correspond to an existing service will be ignored.
+     *
+     * @param array<callable|ServiceInterface> $services The list of services to resolve from.
+     * @param string[]                         $keys     The list of keys to resolve.
+     *
+     * @return array<callable|ServiceInterface> A mapping of keys to resolved services.
      */
     public function resolveServices(array $services, array $keys): array
     {

@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Dhii\Services\Tools\Issues;
 
+/**
+ * An issue related to a specific service and one of its dependencies.
+ */
 class DependencyIssue extends ServiceIssue
 {
     /** @var string */
@@ -12,7 +15,7 @@ class DependencyIssue extends ServiceIssue
     /**
      * @inheritDoc
      *
-     * @param string $dependency
+     * @param string $dependency The key of the dependency that is relevant to the issue.
      */
     public function __construct(int $severity, string $message, string $service, string $dependency)
     {
@@ -21,7 +24,9 @@ class DependencyIssue extends ServiceIssue
     }
 
     /**
-     * @return string
+     * Retrieves the key of the dependency that is relevant to the issue.
+     *
+     * @return string A dependency key.
      */
     public function getDependency(): string
     {

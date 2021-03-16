@@ -9,14 +9,16 @@ use Dhii\Services\ServiceInterface;
 trait GetServiceDepsCapableTrait
 {
     /**
-     * @param callable|ServiceInterface $keys
+     * Retrieves a service's dependency keys.
      *
-     * @return string[]
+     * @param callable|ServiceInterface $service The service whose dependencies to retrieve.
+     *
+     * @return string[] The keys of the service's dependencies.
      */
-    public function getServiceDeps($keys): array
+    public function getServiceDeps($service): array
     {
-        return ($keys instanceof ServiceInterface)
-            ? $keys->getDependencies()
+        return ($service instanceof ServiceInterface)
+            ? $service->getDependencies()
             : [];
     }
 }
