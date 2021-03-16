@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Dhii\Services\Tools\Issues;
 
 class DependencyIssue extends ServiceIssue

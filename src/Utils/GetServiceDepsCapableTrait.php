@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Dhii\Services\Tools\Utils;
 
 use Dhii\Services\ServiceInterface;
