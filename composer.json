@@ -1,12 +1,17 @@
 {
-  "name": "dhii/php-project",
-  "description": "A PHP starter to ease project creation",
+  "name": "dhii/service-tools",
+  "description": "A set of tools for working with service providers",
   "minimum-stability": "dev",
   "license": "MIT",
   "authors": [
     {
       "name": "Anton Ukhanev",
       "email": "xedin.unknown@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Miguel Muscat",
+      "email": "miguelmuscat93@gmail.com",
       "role": "Developer"
     }
   ],
@@ -21,12 +26,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Me\\Library\\": "src"
+      "Dhii\\Services\\Tools\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Me\\Library\\Test\\Func\\": "tests/functional"
+      "Dhii\\Services\\Tools\\Test\\Func\\": "tests/functional"
     }
   },
   "extra": {
