@@ -4,9 +4,8 @@ namespace Dhii\Services\Tools;
 
 class Issue
 {
-    const SMELL = 0;
-    const WARNING = 1;
-    const ERROR = 2;
+    const WARNING = 0;
+    const ERROR = 1;
 
     /** @var int */
     protected $severity;

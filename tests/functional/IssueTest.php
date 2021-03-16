@@ -9,7 +9,7 @@ class IssueTest extends TestCase
 {
     public function testCreate()
     {
-        $severity = Issue::SMELL;
+        $severity = Issue::WARNING;
         $message = 'A disturbance in the force';
 
         $subject = new Issue($severity, $message);
@@ -20,8 +20,6 @@ class IssueTest extends TestCase
 
     public function testSeverityValues()
     {
-        $this->assertTrue(Issue::SMELL < Issue::WARNING);
-        $this->assertTrue(Issue::SMELL < Issue::ERROR);
         $this->assertTrue(Issue::WARNING < Issue::ERROR);
     }
 }

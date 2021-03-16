@@ -20,7 +20,7 @@ class AggregateAnalyzerTest extends TestCase
     {
         $issues1 = [
             new Issue(Issue::WARNING, 'Oh no'),
-            new Issue(Issue::SMELL, 'Your code smells bad'),
+            new Issue(Issue::WARNING, 'Your code smells bad'),
         ];
         $issues2 = [
             new Issue(Issue::ERROR, 'This needs fixing'),
