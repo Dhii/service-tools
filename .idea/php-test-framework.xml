@@ -6,6 +6,7 @@
         <cache>
           <versions>
             <info id="Local" version="PHPUnit version cant be detected. Default PHP interpreter is not local" />
+            <info id="interpreter-2321c1fd-1d03-4357-9aee-11d7dbd0c764" version="8.5.14" />
             <info id="interpreter-ba314a65-6074-40c9-8112-007ea3db0a5f" version="8.5.14" />
           </versions>
         </cache>
