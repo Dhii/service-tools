@@ -13,6 +13,8 @@ class CircularDepIssue extends ServiceIssue
      * Constructor.
      *
      * @param string[] $depChain
+     *
+     * @throws UnexpectedValueException If the given dependency chain is empty.
      */
     public function __construct(array $depChain)
     {
